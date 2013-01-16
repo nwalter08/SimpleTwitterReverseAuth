@@ -11,14 +11,16 @@ Import ABOAuthCore files and the 4 TW files into your xcode project.
 
 In TWSignedRequest.m be sure to insert your Twitter app's Consumer Key and Consumer Secrect. Then delete this line:
 
+```objective-c
 #error Insert your consumer key and consumer secret below and then delete this line
+```
 
 The project will not run until that line is deleted.
 
 Then in the class where you want to get a twitter user's oauth_token and oauth_token_secret import "TWAPIManager.h"
 
 Then add the following line:
-
+```objective-c
     [TWAPIManager performReverseAuthForAccount:tempAcc withHandler:^(NSData *responseData, NSError *error) {
          if (responseData) {
              NSString *responseStr = [[NSString alloc]
@@ -41,7 +43,7 @@ Then add the following line:
              NSLog(@"Error!\n%@", [error localizedDescription]);
          }
      }];
-
+```
 The variable tempAcc is a varible I created earlier, you have to insert your own ACAccount here.
 
 Also for my project, I had a class varible where I store the user's OAuth information in a NSDictionary. That's why assigned the NSMutableDictionary to self.oauthValues. You can handle this data however you'd like.
