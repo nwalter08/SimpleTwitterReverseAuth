@@ -35,11 +35,6 @@ typedef void(^TWAPIHandler)(NSData *data, NSError *error);
 
 @implementation TWAPIManager
 
-//Test function to see if this can be called from other classses
-+ (void)testFunction {
-    NSLog(@"Successfully got here fii!");
-}
-
 /**
  *  Returns true if there are local Twitter accounts available for use.
  *
@@ -86,7 +81,6 @@ typedef void(^TWAPIHandler)(NSData *data, NSError *error);
  *                  main thread.
  */
 + (void)performReverseAuthForAccount:(ACAccount *)account withHandler:(TWAPIHandler)handler {
-    NSLog(@"Inside the TWAPIManager...good work chap!");
     NSParameterAssert(account);
     [self _step1WithCompletion:^(NSData *data, NSError *error) {
         if (!data) {
