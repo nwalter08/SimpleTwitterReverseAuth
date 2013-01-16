@@ -9,6 +9,12 @@ His project is the "Full doctrine", but this project allows you to import the im
 
 Import ABOAuthCore files and the 4 TW files into your xcode project.
 
+In TWSignedRequest.m be sure to insert your Twitter app's Consumer Key and Consumer Secrect. Then delete this line:
+
+#error Insert your consumer key and consumer secret below and then delete this line
+
+The project will not run until that line is deleted.
+
 Then in the class where you want to get a twitter user's oauth_token and oauth_token_secret import "TWAPIManager.h"
 
 Then add the following line:
