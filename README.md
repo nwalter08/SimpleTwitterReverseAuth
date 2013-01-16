@@ -1,11 +1,11 @@
 SimpleTwitterReverseAuth
 ========================
 
-By adding a few files and adding one line of code you can get a twitter user's oauth_token and oauth_token_secret.
+By adding a few files and adding one line of code to your iOS 6 project you can get a twitter user's oauth_token and oauth_token_secret.
 
 Based of @theseancook's work  here https://github.com/seancook/TWReverseAuthExample
 
-His project is the "Full doctrine", but this project allows you to import the important files from his project and add the following to get the oauth_token and oauth_token_secret. The major change I made was I made all the TWAPIManager functions public so that you don't have to make a instance of TWAPIManager to get the OAuth tokens. 
+His project is the "Full doctrine", but this project allows you to import the important files from his project and add the following to get the oauth_token and oauth_token_secret. The major change I made was I made all the TWAPIManager functions public so that you don't have to make a instance of TWAPIManager to get the OAuth tokens. I also got rid of the iOS 5.0 compatibility files. 
 
 Import ABOAuthCore files and the 4 TW files into your xcode project.
 
@@ -47,5 +47,7 @@ Then add the following line:
 The variable tempAcc is a varible I created earlier, you have to insert your own ACAccount here.
 
 Also for my project, I had a class varible where I store the user's OAuth information in a NSDictionary. That's why assigned the NSMutableDictionary to self.oauthValues. You can handle this data however you'd like.
+
+Lastly, the ABOAuthCore is not ARC. Look here for help if you need to get these working. http://maniacdev.com/2012/01/easily-get-non-arc-enabled-open-source-libraries-working-in-arc-enabled-projects/
 
 This is my first attempt at putting some of my work out in the open. Please leave any feedback and add input where you'd like.
